@@ -1,266 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LG S SMOKE</title>
-
 <style>
+:root{--gold:#c9a24d;--black:#000;--dark:#0f0f0f;}
 *{box-sizing:border-box}
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#000;
-color:#d4af37
-}
-header{
-text-align:center;
-padding:20px;
-border-bottom:1px solid #d4af37
-}
-header img{max-width:200px}
-.banner{
-margin-top:10px;
-font-weight:bold
-}
-nav{
-position:sticky;
-top:0;
-z-index:10;
-background:#0b0b0b;
-display:flex;
-gap:10px;
-overflow-x:auto;
-padding:10px
-}
-nav a{
-color:#d4af37;
-text-decoration:none;
-border:1px solid #d4af37;
-padding:8px 14px;
-border-radius:20px;
-white-space:nowrap;
-font-size:14px
-}
-section{padding:20px}
-h2{
-border-bottom:1px solid #d4af37;
-padding-bottom:6px
-}
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-gap:15px
-}
-.card{
-background:#111;
-border:1px solid #d4af37;
-border-radius:12px;
-padding:10px;
-text-align:center
-}
-.card img{
-width:100%;
-height:150px;
-object-fit:cover;
-border-radius:8px
-}
-.price{
-font-weight:bold;
-margin:6px 0
-}
-button{
-margin-top:8px;
-width:100%;
-background:#d4af37;
-color:#000;
-border:none;
-padding:10px;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer
-}
-.whats{
-position:fixed;
-right:15px;
-bottom:15px;
-background:#25D366;
-color:#fff;
-width:56px;
-height:56px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-text-decoration:none;
-z-index:20
-}
-footer{
-text-align:center;
-padding:15px;
-font-size:13px;
-border-top:1px solid #d4af37
-}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff}
+header{text-align:center;padding:22px 14px;border-bottom:2px solid var(--gold)}
+header h1{margin:0;color:var(--gold);letter-spacing:2px}
+header p{margin:8px 0 0;font-size:12px;line-height:1.5}
+nav{position:sticky;top:0;background:#000;border-bottom:1px solid #222;z-index:5}
+nav ul{display:flex;gap:14px;overflow-x:auto;list-style:none;padding:10px 14px;margin:0}
+nav a{color:var(--gold);text-decoration:none;font-weight:bold;white-space:nowrap}
+.container{padding:14px}
+.section-title{margin:26px 0 10px;color:var(--gold);border-left:4px solid var(--gold);padding-left:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.card{background:#111;border:1px solid var(--gold);border-radius:12px;overflow:hidden;cursor:pointer}
+.card img{width:100%;display:block}
+.card .c{padding:10px}
+.card h3{margin:0;color:var(--gold);font-size:14px}
+.card .puff{font-size:12px;margin:4px 0}
+.card .price{font-size:16px;font-weight:bold}
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:flex-end;z-index:10}
+.modal.open{display:flex}
+.sheet{background:#0b0b0b;width:100%;border-radius:18px 18px 0 0;max-height:90vh;overflow:auto;border-top:2px solid var(--gold)}
+.sheet img{width:100%}
+.sheet .content{padding:14px}
+.sheet h2{margin:0;color:var(--gold)}
+.sheet .big{font-size:22px;font-weight:bold;margin:8px 0}
+.flavors{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.flavors button{background:#111;border:1px solid var(--gold);color:#fff;padding:8px 10px;border-radius:20px;cursor:pointer}
+.flavors button.active{background:var(--gold);color:#000}
+.cta{display:block;text-align:center;background:var(--gold);color:#000;text-decoration:none;font-weight:bold;padding:14px;border-radius:10px;margin-top:10px}
+.close{position:absolute;right:16px;top:10px;color:#fff;font-size:26px}
+.whatsapp-float{position:fixed;right:14px;bottom:14px;background:#25d366;color:#000;text-decoration:none;padding:14px 18px;border-radius:30px;font-weight:bold}
+footer{text-align:center;font-size:12px;padding:18px;border-top:1px solid var(--gold);margin-top:30px}
 </style>
 </head>
-
 <body>
-
 <header>
-<img src="logo.jpg" alt="LG S SMOKE">
-<div class="banner">DISPONIVEIS A PRONTA ENTREGA ✅</div>
+  <h1>LG S SMOKE</h1>
+  <p>PRONTA ENTREGA · PECAS LACRADAS<br>NAO OFERECO GARANTIA · UBER MOTO PELO CLIENTE</p>
 </header>
-
 <nav>
-<a href="#lostmary">LOSTMARY</a>
-<a href="#lostangel">LOST ANGEL</a>
-<a href="#ignite">IGNITE</a>
-<a href="#elfbar">ELFBAR</a>
-<a href="#oxbar">OXBAR</a>
-<a href="#novidades">NOVIDADES</a>
+  <ul>
+    <li><a href="#lostmary">LOSTMARY</a></li>
+    <li><a href="#elfbar">ELFBAR</a></li>
+    <li><a href="#ignite">IGNITE</a></li>
+  </ul>
 </nav>
-
-<!-- LOSTMARY -->
-<section id="lostmary">
-<h2>LOSTMARY</h2>
-<div class="products">
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=LOSTMARY+10K">
-<p><strong>LOSTMARY 10.000 PUFF</strong></p>
-<p>Strawberry Cherry Lemon 🍓🍒🍋</p>
-<p class="price">R$64,90</p>
-<button onclick="buy('LOSTMARY','10.000 PUFF','Strawberry Cherry Lemon','64,90')">COMPRAR</button>
+<div class="container">
+  <h2 id="lostmary" class="section-title">LOSTMARY</h2>
+  <div class="grid">
+    <div class="card" data-name="LOSTMARY 10K" data-puff="10000 PUFF" data-price="R$64,90" data-flavors="STRAWBERRY CHERRY LEMON" data-img="https://via.placeholder.com/800x800/000000/C9A24D?text=LOSTMARY+10K">
+      <img src="https://via.placeholder.com/600x600/000000/C9A24D?text=LOSTMARY+10K" />
+      <div class="c"><h3>LOSTMARY 10K</h3><div class="puff">10.000 PUFF</div><div class="price">R$64,90</div></div>
+    </div>
+    <div class="card" data-name="LOSTMARY 20K" data-puff="20000 PUFF" data-price="R$69,90" data-flavors="GRAPEFRUIT MINT|STRAWBERRY ICE|GRAPE ICE|STRAWBERRY KIWI" data-img="https://via.placeholder.com/800x800/000000/C9A24D?text=LOSTMARY+20K">
+      <img src="https://via.placeholder.com/600x600/000000/C9A24D?text=LOSTMARY+20K" />
+      <div class="c"><h3>LOSTMARY 20K</h3><div class="puff">20.000 PUFF</div><div class="price">R$69,90</div></div>
+    </div>
+  </div>
+  <h2 id="elfbar" class="section-title">ELFBAR</h2>
+  <div class="grid">
+    <div class="card" data-name="ELFBAR 30K" data-puff="30000 PUFF" data-price="R$84,90" data-flavors="STRAWBERRY WATERMELON|ACAI BANANA|GREEN APPLE" data-img="https://via.placeholder.com/800x800/000000/C9A24D?text=ELFBAR+30K">
+      <img src="https://via.placeholder.com/600x600/000000/C9A24D?text=ELFBAR+30K" />
+      <div class="c"><h3>ELFBAR 30K</h3><div class="puff">30.000 PUFF</div><div class="price">R$84,90</div></div>
+    </div>
+    <div class="card" data-name="ELFBAR ICE KING" data-puff="40000 PUFF" data-price="R$97,90" data-flavors="SOUR APPLE ICE|MIAMI MINT" data-img="https://via.placeholder.com/800x800/000000/C9A24D?text=ICE+KING+40K">
+      <img src="https://via.placeholder.com/600x600/000000/C9A24D?text=ICE+KING+40K" />
+      <div class="c"><h3>ELFBAR ICE KING</h3><div class="puff">40.000 PUFF</div><div class="price">R$97,90</div></div>
+    </div>
+  </div>
+  <h2 id="ignite" class="section-title">IGNITE</h2>
+  <div class="grid">
+    <div class="card" data-name="IGNITE V150" data-puff="15000 PUFF" data-price="R$79,90" data-flavors="STRAWBERRY APPLE WATERMELON|GRAPE ICE|ICY MINT" data-img="https://via.placeholder.com/800x800/000000/C9A24D?text=IGNITE+V150">
+      <img src="https://via.placeholder.com/600x600/000000/C9A24D?text=IGNITE+V150" />
+      <div class="c"><h3>IGNITE V150</h3><div class="puff">15.000 PUFF</div><div class="price">R$79,90</div></div>
+    </div>
+    <div class="card" data-name="IGNITE V400 ICE" data-puff="40000 PUFF" data-price="R$99,90" data-flavors="STRAWBERRY BANANA|BLUEBERRY" data-img="https://via.placeholder.com/800x800/000000/C9A24D?text=V400+IGNITE">
+      <img src="https://via.placeholder.com/600x600/000000/C9A24D?text=V400+IGNITE" />
+      <div class="c"><h3>IGNITE V400 ICE</h3><div class="puff">40.000 PUFF</div><div class="price">R$99,90</div></div>
+    </div>
+  </div>
 </div>
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=LOSTMARY+20K">
-<p><strong>LOSTMARY 20.000 PUFF</strong></p>
-<p>VARIOS SABORES 🍓🍇🍊</p>
-<p class="price">R$69,90</p>
-<button onclick="buy('LOSTMARY','20.000 PUFF','CONSULTAR SABOR','69,90')">COMPRAR</button>
+<div class="modal" id="modal">
+  <div class="sheet">
+    <span class="close" onclick="closeModal()">×</span>
+    <img id="mimg" />
+    <div class="content">
+      <h2 id="mname"></h2>
+      <div id="mpuff"></div>
+      <div class="big" id="mprice"></div>
+      <div class="flavors" id="mflavors"></div>
+      <a id="mbuy" class="cta" href="#">PEDIR NO WHATSAPP</a>
+    </div>
+  </div>
 </div>
-
-</div>
-</section>
-
-<!-- LOST ANGEL -->
-<section id="lostangel">
-<h2>LOST ANGEL</h2>
-<div class="products">
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=LOST+ANGEL+20K">
-<p><strong>LOST ANGEL 20.000 PUFF</strong></p>
-<p>Miami Mint 💚 • Watermelon Ice 🍉❄️</p>
-<p class="price">R$64,90</p>
-<button onclick="buy('LOST ANGEL','20.000 PUFF','CONSULTAR SABOR','64,90')">COMPRAR</button>
-</div>
-
-</div>
-</section>
-
-<!-- IGNITE -->
-<section id="ignite">
-<h2>IGNITE</h2>
-<div class="products">
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=IGNITE+V80">
-<p><strong>IGNITE V80 • 8.000 PUFF</strong></p>
-<p class="price">R$74,90</p>
-<button onclick="buy('IGNITE V80','8.000 PUFF','CONSULTAR SABOR','74,90')">COMPRAR</button>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=IGNITE+V150">
-<p><strong>IGNITE V150 • 15.000 PUFF</strong></p>
-<p class="price">R$79,90</p>
-<button onclick="buy('IGNITE V150','15.000 PUFF','CONSULTAR SABOR','79,90')">COMPRAR</button>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=IGNITE+V400">
-<p><strong>IGNITE V400 • 40.000 PUFF</strong></p>
-<p class="price">A PARTIR DE R$99,90</p>
-<button onclick="buy('IGNITE V400','40.000 PUFF','CONSULTAR MODELO','99,90')">COMPRAR</button>
-</div>
-
-</div>
-</section>
-
-<!-- ELFBAR -->
-<section id="elfbar">
-<h2>ELFBAR</h2>
-<div class="products">
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=ELFBAR+10K">
-<p><strong>ELFBAR 10.000 PUFF</strong></p>
-<p class="price">R$57,90</p>
-<button onclick="buy('ELFBAR','10.000 PUFF','Honeyloupe Mango','57,90')">COMPRAR</button>
-</div>
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=ICE+KING+40K">
-<p><strong>ELFBAR ICE KING • 40.000 PUFF</strong></p>
-<p class="price">R$97,90</p>
-<button onclick="buy('ELFBAR ICE KING','40.000 PUFF','CONSULTAR SABOR','97,90')">COMPRAR</button>
-</div>
-
-</div>
-</section>
-
-<!-- OXBAR -->
-<section id="oxbar">
-<h2>OXBAR</h2>
-<div class="products">
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=OXBAR+10K">
-<p><strong>OXBAR 10.000 PUFF</strong></p>
-<p>Wap Drops 🩷</p>
-<p class="price">R$57,90</p>
-<button onclick="buy('OXBAR','10.000 PUFF','Wap Drops','57,90')">COMPRAR</button>
-</div>
-
-</div>
-</section>
-
-<section id="novidades">
-<h2>NOVIDADES</h2>
-<div class="products">
-
-<div class="card">
-<img src="https://via.placeholder.com/300x300?text=EM+BREVE">
-<p><strong>OXBAR 30K</strong></p>
-<p>VAI CHEGAR 💨</p>
-<p class="price">CONSULTE</p>
-<button onclick="buy('NOVIDADES','','CONSULTAR','')">CHAMAR NO WHATSAPP</button>
-</div>
-
-</div>
-</section>
-
-<a class="whats" href="https://wa.me/5511992976808">🟢</a>
-
+<a class="whatsapp-float" href="https://wa.me/5511992976808">WHATSAPP</a>
 <footer>
-PECAS LACRADAS<br>
-NAO OFERECO GARANTIA<br>
-ENTREGA VIA UBER MOTO
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;max-width:900px;margin:auto;text-align:left">
+  <div><strong>FORMAS DE PAGAMENTO</strong><br>💵 DINHEIRO<br>💳 CARTAO<br>⚡ PIX</div>
+  <div><strong>FORMAS DE ENVIO</strong><br>🚚 ENTREGA<br>🏪 RETIRADA<br>📦 CONSULTAR TAXA</div>
+  <div><strong>CONTATO</strong><br>📧 giovannamansano29@gmail.com<br>📞 +55 11 99297-6808</div>
+  <div><strong>SEGURANCA</strong><br>🔒 SSL ATIVO<br>🛡️ GOOGLE SAFE</div>
+</div>
+<div style="margin-top:20px">LG S SMOKE © 2026</div>
 </footer>
-
 <script>
-function buy(marca,puff,sabor,preco){
-let msg = "OLA, TENHO INTERESSE NO PRODUTO:%0A";
-msg += "MARCA: "+marca+"%0A";
-msg += "PUFF: "+puff+"%0A";
-if(sabor) msg += "SABOR: "+sabor+"%0A";
-if(preco) msg += "VALOR: R$"+preco;
-window.open("https://wa.me/5511992976808?text="+msg);
+const modal=document.getElementById('modal');
+let selectedFlavor='';
+function openModal(card){
+  selectedFlavor='';
+  document.getElementById('mimg').src=card.dataset.img;
+  document.getElementById('mname').innerText=card.dataset.name;
+  document.getElementById('mpuff').innerText=card.dataset.puff;
+  document.getElementById('mprice').innerText=card.dataset.price;
+  const flavors=card.dataset.flavors.split('|');
+  const wrap=document.getElementById('mflavors');wrap.innerHTML='';
+  flavors.forEach(f=>{const b=document.createElement('button');b.innerText=f;b.onclick=()=>{document.querySelectorAll('.flavors button').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedFlavor=f;updateLink(card)};wrap.appendChild(b)});
+  updateLink(card);
+  modal.classList.add('open');
 }
+function closeModal(){modal.classList.remove('open')}
+function updateLink(card){
+  const txt=`OLÁ, QUERO COMPRAR:%0A${card.dataset.name}%0A${card.dataset.puff}%0ASABOR: ${selectedFlavor||'SELECIONAR'}%0APRECO: ${card.dataset.price}`;
+  document.getElementById('mbuy').href=`https://wa.me/5511992976808?text=${txt}`;
+}
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>openModal(c)));
 </script>
-
 </body>
 </html>
