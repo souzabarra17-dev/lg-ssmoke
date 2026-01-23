@@ -18,7 +18,7 @@ nav a{color:var(--gold);text-decoration:none;font-weight:bold;white-space:nowrap
 .section-title{margin:26px 0 10px;color:var(--gold);border-left:4px solid var(--gold);padding-left:10px}
 .grid{
   display:grid;
-  grid-template-columns:repeat(2, 1fr);
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
   gap:14px;
 }
   @media (min-width: 900px){
@@ -34,9 +34,8 @@ nav a{color:var(--gold);text-decoration:none;font-weight:bold;white-space:nowrap
 }
 .card img{
   width:100%;
-  aspect-ratio:1 / 1;   /* 🔑 chave do iOS */
-  object-fit:contain;
-  background:#000;
+  height:auto;
+  display:block;
 }
 .card .c{padding:10px}
 .card h3{margin:0;color:var(--gold);font-size:14px}
@@ -390,4 +389,5 @@ document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>ope
 </script>
 </body>
 </html>
+
 
