@@ -16,18 +16,21 @@ nav ul{display:flex;gap:14px;overflow-x:auto;list-style:none;padding:10px 14px;m
 nav a{color:var(--gold);text-decoration:none;font-weight:bold;white-space:nowrap}
 .container{padding:14px}
 .section-title{margin:26px 0 10px;color:var(--gold);border-left:4px solid var(--gold);padding-left:10px}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+.grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
 }
-@media (min-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 1200px;
-    margin: 0 auto;
+
+.card{
+  width:calc(50% - 7px);
+}
+@media (min-width:900px){
+  .card{
+    width:calc(25% - 11px);
   }
 }
+
 .card{background:#111;border:1px solid var(--gold);border-radius:12px;overflow:hidden;cursor:pointer}
 .card img{width:100%;display:block}
 .card .c{padding:10px}
@@ -303,7 +306,7 @@ footer{text-align:center;font-size:12px;padding:18px;border-top:1px solid var(--
     data-price="R$99,90"
     data-flavors="🍍 PINEAPPLE ICE|🍉🍓 STRAWBERRY WATERMELON|🥝 STRAWBERRY KIWI|💚 COOL MENTHOL|🍇 GRAPE ICE|🍒 BANANA CHERRY"
     data-img="ignite-boost.jpg">
-    <img src="ignite-boost".jpg/>
+    <img src="ignite-boost.jpg"/>
     <div class="c">
       <h3>IGNITE V400 SWEET</h3>
       <div class="puff">40.000 PUFF</div>
@@ -386,3 +389,4 @@ document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>ope
 </script>
 </body>
 </html>
+
