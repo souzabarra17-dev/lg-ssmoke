@@ -16,30 +16,15 @@ nav ul{display:flex;gap:14px;overflow-x:auto;list-style:none;padding:10px 14px;m
 nav a{color:var(--gold);text-decoration:none;font-weight:bold;white-space:nowrap}
 .container{padding:14px}
 .section-title{margin:26px 0 10px;color:var(--gold);border-left:4px solid var(--gold);padding-left:10px}
-/* BASE */
 .grid {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
-/* Sempre 2 por linha (Lostmary, Elfbar, Oxbar) */
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-/* Automático (se quiser usar em algum lugar) */
-.grid-auto {
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-}
-/* Desktop */
 @media (min-width: 900px) {
-  .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 600px;
-  }
-  .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1000px;
-  }
   .grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
     margin: 0 auto;
   }
 }
@@ -398,6 +383,7 @@ document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>ope
 </script>
 </body>
 </html>
+
 
 
 
