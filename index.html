@@ -29,16 +29,26 @@ nav a{color:var(--gold);text-decoration:none;font-weight:bold;white-space:nowrap
   }
 }
 /* FORCAR CONTORNO DOURADO EM TODOS OS CARDS */
-.card {
-  border: 1.5px solid #c9a24d !important;
-  background: #111;
+.card{
+  border:1.5px solid var(--gold);
+  background:#111;
+  display:flex;
+  flex-direction:column;
+  height:260px;
 }
 .card img{
   width:100%;
-  height:auto;
-  display:block;
+  height:150px;
+  object-fit:contain;
+  background:#000;
 }
-.card .c{padding:10px}
+.card .c{
+  padding:10px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
 .card h3{margin:0;color:var(--gold);font-size:14px}
 .card .puff{font-size:12px;margin:4px 0}
 .card .price{font-size:16px;font-weight:bold}
@@ -87,8 +97,8 @@ footer{text-align:center;font-size:12px;padding:18px;border-top:1px solid var(--
     </div>
 <div class="container">
   <h2 id="lostangel" class="section-title">LOST ANGEL</h2>
-
-  <div class="grid">
+  <div class="grid">  </div>
+</div>
     <div class="card"
       data-name="LOST ANGEL 20K"
       data-puff="20000 PUFF"
@@ -103,7 +113,7 @@ footer{text-align:center;font-size:12px;padding:18px;border-top:1px solid var(--
       </div>
 <div class="container">
   <h2 id="ELFBAR" class="section-title">ELFBAR</h2>
-  <div class="grid">
+  <div class="grid"></div></div>
   <div class="card" data-name="RABBEATS ELFBAR"
     data-puff="10000 PUFF"
     data-price="R$57,90"
@@ -399,6 +409,7 @@ document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>ope
 </script>
 </body>
 </html>
+
 
 
 
