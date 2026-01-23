@@ -7,6 +7,20 @@
 <style>
 :root{--gold:#c9a24d;--black:#000;--dark:#0f0f0f;}
 *{box-sizing:border-box}
+  .badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:var(--gold);
+  color:#000;
+  font-size:11px;
+  font-weight:bold;
+  padding:4px 8px;
+  border-radius:8px;
+}
+.badge.esgotado{background:#555;color:#fff}
+.badge.promo{background:#e63946;color:#fff}
+.card{position:relative}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#000;color:#fff}
 header{text-align:center;padding:22px 14px;border-bottom:2px solid var(--gold)}
 header h1{margin:0;color:var(--gold);letter-spacing:2px}
@@ -17,6 +31,26 @@ nav a{color:var(--gold);text-decoration:none;font-weight:bold;white-space:nowrap
 .container{padding:14px}
 .section-title{margin:26px 0 10px;color:var(--gold);border-left:4px solid var(--gold);padding-left:10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+  @media (min-width: 1024px){
+  .container{
+    max-width:1200px;
+    margin:auto;
+  }
+
+  .grid{
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+  }
+
+  .card{
+    transition:.3s ease;
+  }
+
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 12px 30px rgba(201,162,77,.25);
+  }
+}
 .card{background:#111;border:1px solid var(--gold);border-radius:12px;overflow:hidden;cursor:pointer}
 .card img{
   width:100%;
@@ -398,5 +432,6 @@ document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>ope
 </script>
 </body>
 </html>
+
 
 
