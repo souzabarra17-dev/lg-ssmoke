@@ -192,29 +192,6 @@ Strawberry kiwi (morango e kiwi) 🍓🥝
   </div>
 </div>
 
-<div class="modal" id="modal">
-  <div class="sheet">
-    <span class="close" onclick="closeModal()">×</span>
-    <img id="mimg" />
-    <div class="content">
-      <h2 id="mname"></h2>
-      <div id="mpuff"></div>
-      <div class="big" id="mprice"></div>
-      <div class="flavors" id="mflavors"></div>
-      <a id="mbuy" class="cta" href="#">PEDIR NO WHATSAPP</a>
-    </div>
-  </div>
-</div>
-<a class="whatsapp-float" href="https://wa.me/5511992976808">WHATSAPP</a>
-<footer>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;max-width:900px;margin:auto;text-align:left">
-  <div><strong>FORMAS DE PAGAMENTO</strong><br>💵 DINHEIRO<br>💳 CARTAO<br>⚡ PIX</div>
-  <div><strong>FORMAS DE ENVIO</strong><br>🚚 ENTREGA<br>🏪 RETIRADA<br>📦 CONSULTAR TAXA</div>
-  <div><strong>CONTATO</strong><br>📧 giovannamansano29@gmail.com<br>📞 +55 11 98794-8011</div>
-  <div><strong>SEGURANCA</strong><br>🔒 SSL ATIVO<br>🛡️ GOOGLE SAFE</div>
-</div>
-<div style="margin-top:20px">LG SMOKE © 2026</div>
-</footer>
 <script>
 const modal=document.getElementById('modal');
 let selectedFlavor='';
@@ -225,17 +202,34 @@ function openModal(card){
   document.getElementById('mpuff').innerText=card.dataset.puff;
   document.getElementById('mprice').innerText=card.dataset.price;
   const flavors=card.dataset.flavors.split('|');
-  const wrap=document.getElementById('mflavors');wrap.innerHTML='';
-  flavors.forEach(f=>{const b=document.createElement('button');b.innerText=f;b.onclick=()=>{document.querySelectorAll('.flavors button').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedFlavor=f;updateLink(card)};wrap.appendChild(b)});
+  const wrap=document.getElementById('mflavors');
+  wrap.innerHTML='';
+  flavors.forEach(f=>{
+    const b=document.createElement('button');
+    b.innerText=f;
+    b.onclick=()=>{
+      document.querySelectorAll('.flavors button')
+        .forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      selectedFlavor=f;
+      updateLink(card);
+    };
+    wrap.appendChild(b);
+  });
   updateLink(card);
   modal.classList.add('open');
 }
 function closeModal(){modal.classList.remove('open')}
 function updateLink(card){
-  const txt=`OLÁ, QUERO COMPRAR:%0A${card.dataset.name}%0A${card.dataset.puff}%0ASABOR: ${selectedFlavor||'SELECIONAR'}%0APRECO: ${card.dataset.price}`;
-  document.getElementById('mbuy').href=`https://wa.me/5511992976808?text=${txt}`;
+  const txt=
+`OLA, QUERO COMPRAR:
+${card.dataset.name}
+${card.dataset.puff}
+SABOR: ${selectedFlavor || 'SELECIONAR'}
+PRECO: ${card.dataset.price}`;
+  document.getElementById('mbuy').href=
+`https://wa.me/5511992976808?text=${encodeURIComponent(txt)}`;
 }
-document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>openModal(c)));
+document.querySelectorAll('.card')
+  .forEach(c=>c.addEventListener('click',()=>openModal(c)));
 </script>
-</body>
-</html>
