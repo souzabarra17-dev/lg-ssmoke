@@ -18,7 +18,12 @@ nav a{color:var(--gold);text-decoration:none;font-weight:bold;white-space:nowrap
 .section-title{margin:26px 0 10px;color:var(--gold);border-left:4px solid var(--gold);padding-left:10px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
 .card{background:#111;border:1px solid var(--gold);border-radius:12px;overflow:hidden;cursor:pointer}
-.card img{width:100%;display:block}
+.card img{
+  width:100%;
+  max-height:200px;
+  object-fit:contain;
+  background:#000;
+}
 .card .c{padding:10px}
 .card h3{margin:0;color:var(--gold);font-size:14px}
 .card .puff{font-size:12px;margin:4px 0}
@@ -375,6 +380,7 @@ document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>ope
 </script>
 </body>
 </html>
+
 
 
 
