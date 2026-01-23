@@ -16,11 +16,25 @@ nav ul{display:flex;gap:14px;overflow-x:auto;list-style:none;padding:10px 14px;m
 nav a{color:var(--gold);text-decoration:none;font-weight:bold;white-space:nowrap}
 .container{padding:14px}
 .section-title{margin:26px 0 10px;color:var(--gold);border-left:4px solid var(--gold);padding-left:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
-.card{background:#111;border:1px solid var(--gold);border-radius:12px;overflow:hidden;cursor:pointer}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:14px;
+}
+  @media (min-width: 900px){
+  .grid{
+    grid-template-columns:repeat(4, 1fr);
+    max-width:1200px;
+    margin:0 auto;
+  }
+}
+.card{
+  display:flex;
+  flex-direction:column;
+}
 .card img{
   width:100%;
-  max-height:200px;
+  aspect-ratio:1 / 1;   /* 🔑 chave do iOS */
   object-fit:contain;
   background:#000;
 }
@@ -376,3 +390,4 @@ document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>ope
 </script>
 </body>
 </html>
+
